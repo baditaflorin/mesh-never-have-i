@@ -1,6 +1,3 @@
-/* App-local styles. Mesh chrome (settings drawer, self-ref bar) is provided by
- * @baditaflorin/mesh-common/styles.css imported in main.tsx. */
-
 :root {
   color-scheme: dark;
 }
@@ -22,30 +19,141 @@ body,
   -webkit-tap-highlight-color: transparent;
 }
 
-.feature-placeholder {
-  padding: 6rem 1.5rem 2rem;
-  text-align: center;
+.nhi-screen {
+  padding: 4rem 1rem 5rem;
+  max-width: 36rem;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 1rem;
 }
 
-.feature-placeholder h1 {
-  font-size: 1.6rem;
-  margin: 0;
+.nhi-header {
+  text-align: center;
+}
+
+.nhi-header h1 {
+  margin: 0 0 0.3rem;
   color: var(--mesh-accent);
+  font-size: 1.5rem;
 }
 
-.feature-placeholder p {
-  max-width: 32rem;
+.nhi-status {
   margin: 0;
-  opacity: 0.85;
-  line-height: 1.5;
+  font-size: 0.78rem;
+  color: var(--mesh-muted);
 }
 
-.feature-status {
-  font-size: 0.85rem;
+.nhi-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.nhi-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.nhi-prompt {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.nhi-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nhi-btn {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.25);
+  color: var(--mesh-fg);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 0.55rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.nhi-btn.is-active {
+  background: var(--mesh-accent);
+  color: #0b0a06;
+  border-color: var(--mesh-accent);
+  font-weight: 600;
+}
+
+.nhi-meter {
+  position: relative;
+  height: 22px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.nhi-meter-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: var(--mesh-accent);
   opacity: 0.6;
+  transition: width 200ms ease;
+}
+
+.nhi-meter-label {
+  position: relative;
+  display: block;
+  text-align: center;
+  font-size: 0.75rem;
+  line-height: 22px;
+  color: var(--mesh-fg);
   font-variant-numeric: tabular-nums;
+}
+
+.nhi-rm {
+  align-self: flex-end;
+  background: transparent;
+  color: var(--mesh-muted);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+
+.nhi-add {
+  display: flex;
+  gap: 0.5rem;
+  position: sticky;
+  bottom: 0;
+  background: var(--mesh-bg);
+  padding: 0.5rem 0;
+}
+
+.nhi-add input {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--mesh-fg);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+}
+
+.nhi-add button {
+  background: var(--mesh-accent);
+  color: #0b0a06;
+  border: none;
+  padding: 0 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
 }
