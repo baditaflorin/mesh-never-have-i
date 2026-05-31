@@ -1,7 +1,7 @@
 # mesh-never-have-i
 
 [![pages](https://img.shields.io/badge/live-baditaflorin.github.io%2Fmesh-never-have-i-c850c0)](https://baditaflorin.github.io/mesh-never-have-i/)
-[![version](https://img.shields.io/badge/version-0.1.0-blue)](https://github.com/baditaflorin/mesh-never-have-i/blob/main/package.json)
+[![version](https://img.shields.io/badge/version-0.1.1-blue)](https://github.com/baditaflorin/mesh-never-have-i/blob/main/package.json)
 [![license](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 
 > Anonymous 'never have I ever' party game — group sees % guilty per prompt

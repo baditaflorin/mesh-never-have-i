@@ -20,7 +20,7 @@ const SEED_PROMPTS = [
 
 export function Feature({ room, config }: Props) {
   void config;
-  const [, rerender] = useState(0);
+  const [tick, rerender] = useState(0);
   const [draft, setDraft] = useState("");
 
   useEffect(() => {
@@ -39,6 +39,11 @@ export function Feature({ room, config }: Props) {
     };
   }, [room]);
 
+  // Re-derive from the live Yjs doc on every observer-driven re-render. The
+  // `tick` dep is essential: seed prompts and every peer's votes are written
+  // to the doc AFTER first render, and the observers above only bump `tick` —
+  // memoizing on `[room]` alone froze this snapshot at the empty initial state,
+  // so prompts and tallies never appeared (single-peer or across the mesh).
   const data = useMemo<{ prompts: Prompt[]; votes: VotesByPrompt }>(() => {
     if (!room) return { prompts: [], votes: {} };
     const prompts = room.doc.getArray<Prompt>("prompts").toArray();
@@ -52,7 +57,7 @@ export function Feature({ room, config }: Props) {
       votes[pid] = obj;
     });
     return { prompts, votes };
-  }, [room]);
+  }, [room, tick]);
 
   if (!room) {
     return (
